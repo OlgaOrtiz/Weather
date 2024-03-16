@@ -6,8 +6,8 @@ const searchButton = document.querySelector('#city-search-button');
 let cityList = [];
 
 searchButton.addEventListener('click', async () => {
-    cityList = [];
-    cityOptions.innerHTML = '';
+    //cityList = [];
+    //cityOptions.innerHTML = '';
     const cityName = citySearchbar.value;
     if (cityName) {
         const cityObjs = await fetchCityByName(cityName);
