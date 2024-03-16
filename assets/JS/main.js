@@ -1,4 +1,5 @@
 import { fetchCityByName } from "./requests";
+import {getCityByDetails} from "./search.js";
 
 const citySearchbar = document.querySelector('#city-searchbar');
 const cityOptions = document.querySelector('#city-options')
@@ -22,6 +23,12 @@ searchButton.addEventListener('click', async () => {
 });
 
 citySearchbar.addEventListener('change', () => {
-    console.log('change of the search bar is triggered!');
-    console.log(cityList);
-})
+    const foundCity = getCityByDetails(citySearchbar.value, cityList);
+    if (foundCity) {
+        //todo: we need to get the foundCity's coordinate and get the weather information so we can generate the overview card of the weather
+        //todo: step 1 call the weather API using foundCity's latitude and longitude
+        //todo: step 2 handle the response from the server (successful or failed)
+        //todo: step 3 generate the overview card of the weather
+    }
+
+});
